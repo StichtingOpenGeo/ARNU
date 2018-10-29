@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Marlies Bomers (Hewlett-Packard Co) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Jeroen Tekelenburg (EDS- Utrecht) -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:jp="http://www.tt-solutions.nl/schemas/NS/RTI/1.1/" xmlns:ns="http://www.tt-solutions.nl/schemas/NS/RTI/1.1/" xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.tt-solutions.nl/schemas/NS/RTI/1.1/">
+	<types>
+		<xsd:schema xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jp="http://www.tt-solutions.nl/schemas/NS/RTI/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tt-solutions.nl/schemas/NS/RTI/1.1/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+			<xsd:include schemaLocation="ServiceInfo.xsd"/>
+			<xsd:element name="PutServiceInfoIn">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ServiceInfoList" type="jp:ServiceInfoServiceList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PutServiceInfoOut">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ReturnValue" type="jp:ServiceInfoReturn"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PutPlatformInfoIn">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="PlatformInfoList" type="jp:PlatFormInfoList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PutPlatformInfoOut">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ReturnValue" type="jp:PlatformInfoReturn"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetSeviceInfoIn">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ServiceInput" type="jp:ServiceInputType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetServiceInfoOut">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ServiceInfoList" type="jp:ServiceInfoServiceList"/>
+						<xsd:element name="ServiceInput" type="jp:ServiceInputType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetServiceInfoJitIn">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ServiceInput" type="jp:ServiceInputJitType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetServiceInfoJitOut">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ServiceInfoList" type="jp:ServiceInfoServiceJitList"/>
+						<xsd:element name="ServiceInput" type="jp:ServiceInputJitType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetRtiMonitorIn">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="RtiMonitorInput" type="jp:RtiMonitorInputType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetRtiMonitorOut">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ServiceInfoList" type="jp:ServiceInfoServiceJitList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetRtiServicesSummaryIn">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="RtiServicesSummaryInput" type="jp:RtiServicesSummaryInputType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetRtiServicesSummaryOut">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="RtiServicesSummaryOutput">
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="jp:RtiServicesSummaryOutputType"/>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetServiceInfoByRtiServiceIdIn">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ServiceInput" type="jp:ServiceInputByRtiServiceIdType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetServiceInfoByRtiServiceIdOut">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ServiceInfoList" type="jp:ServiceInfoServiceJitList"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</types>
+	<message name="PutServiceInfoRequest">
+		<part name="parameter" element="jp:PutServiceInfoIn"/>
+	</message>
+	<message name="PutServiceInfoResponse">
+		<part name="parameter" element="jp:PutServiceInfoOut"/>
+	</message>
+	<message name="PutPlatformInfoRequest">
+		<part name="parameter" element="jp:PutPlatformInfoIn"/>
+	</message>
+	<message name="PutPlatformInfoResponse">
+		<part name="parameter" element="jp:PutPlatformInfoOut"/>
+	</message>
+	<message name="GetServiceInfoRequest">
+		<part name="parameter" element="jp:GetSeviceInfoIn"/>
+	</message>
+	<message name="GetServiceInfoResponse">
+		<part name="parameter" element="jp:GetServiceInfoOut"/>
+	</message>
+	<message name="GetRtiMonitorRequest">
+		<part name="parameter" element="jp:GetRtiMonitorIn"/>
+	</message>
+	<message name="GetRtiMonitorResponse">
+		<part name="parameter" element="jp:GetRtiMonitorOut"/>
+	</message>
+	<message name="GetServiceInfoJitRequest">
+		<part name="parameter" element="jp:GetServiceInfoJitIn"/>
+	</message>
+	<message name="GetServiceInfoJitResponse">
+		<part name="parameter" element="jp:GetServiceInfoJitOut"/>
+	</message>
+	<message name="GetRTIServicesSummaryRequest">
+		<part name="parameter" element="jp:GetRtiServicesSummaryIn"/>
+	</message>
+	<message name="GetRTIServicesSummaryResponse">
+		<part name="parameter" element="jp:GetRtiServicesSummaryOut"/>
+	</message>
+	<message name="GetServiceInfoByRtiServiceIdRequest">
+		<part name="parameter" element="jp:GetServiceInfoByRtiServiceIdIn"/>
+	</message>
+	<message name="GetServiceInfoByRtiServiceIdResponse">
+		<part name="parameter" element="jp:GetServiceInfoByRtiServiceIdOut"/>
+	</message>
+	<portType name="JourneyPlannerSoap">
+		<operation name="GetServiceInfo">
+			<input message="jp:GetServiceInfoRequest"/>
+			<output message="jp:GetServiceInfoResponse"/>
+		</operation>
+		<operation name="GetServiceInfoJit">
+			<input message="jp:GetServiceInfoJitRequest"/>
+			<output message="jp:GetServiceInfoJitResponse"/>
+		</operation>
+		<operation name="GetServiceInfoByRtiServiceId">
+			<input message="jp:GetServiceInfoByRtiServiceIdRequest"/>
+			<output message="jp:GetServiceInfoByRtiServiceIdResponse"/>
+		</operation>
+		<operation name="GetRtiMonitor">
+			<input message="jp:GetRtiMonitorRequest"/>
+			<output message="jp:GetRtiMonitorResponse"/>
+		</operation>
+		<operation name="PutServiceInfo">
+			<documentation>Service definition of function ns__Service</documentation>
+			<input message="jp:PutServiceInfoRequest"/>
+			<output message="jp:PutServiceInfoResponse"/>
+		</operation>
+		<operation name="PutPlatformInfo">
+			<documentation>Service definition of function ns__InfraRestriction</documentation>
+			<input message="jp:PutPlatformInfoRequest"/>
+			<output message="jp:PutPlatformInfoResponse"/>
+		</operation>
+		<operation name="GetRTIServicesSummary">
+			<input message="jp:GetRTIServicesSummaryRequest"/>
+			<output message="jp:GetRTIServicesSummaryResponse"/>
+		</operation>
+	</portType>
+	<binding name="JourneyPlannerSoap" type="jp:JourneyPlannerSoap">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetServiceInfo">
+			<soap:operation soapAction="urn:#GetServiceInfo"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetRtiMonitor">
+			<soap:operation soapAction="urn:#GetRtiMonitor"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetServiceInfoJit">
+			<soap:operation soapAction="urn:GetServiceInfoJit"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetServiceInfoByRtiServiceId">
+			<soap:operation soapAction="urn:GetServiceInfoByRtiServiceId"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PutServiceInfo">
+			<soap:operation soapAction="urn:#PutServiceInfo"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="PutPlatformInfo">
+			<soap:operation soapAction="urn:#PutPlatformInfo"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetRTIServicesSummary">
+			<soap:operation soapAction="urn:#GetRTIServicesSummary"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="JourneyPlanner">
+		<documentation>Version 1.1 Webservice for submitting Real Time Information to the EDS' Journey Planner.</documentation>
+		<port name="JourneyPlannerSoap" binding="jp:JourneyPlannerSoap">
+			<soap:address location="http://NotYetDefined"/>
+		</port>
+	</service>
+</definitions>
